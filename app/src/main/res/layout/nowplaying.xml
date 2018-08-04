@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/slideupNowPlaying"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    android:gravity="bottom"
+    android:nestedScrollingEnabled="true"
+    app:umanoScrollableView="@+id/nowPlayingList"
+    sothree:umanoDragView="@+id/nowPlayingListConatiner"
+    sothree:umanoOverlay="true"
+    sothree:umanoPanelHeight="175dp"
+    sothree:umanoParallaxOffset="100dp"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="20">
+
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:id="@+id/moreArtistContainer"
+                android:background="@color/windowBackground"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <View
+                    android:id="@+id/sidepaletteforartistImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></View>
+
+                <ImageView
+                    android:id="@+id/artistImageinNowPlaying"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+
+                <View
+                    android:id="@+id/bottompaletteforartistImage"
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitStart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></View>
+
+                <TextView
+                    android:id="@+id/morebyartist"
+                    android:layout_width="216dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="2"
+                    android:text="More by Artist"
+                    android:textColor="@color/textColorPrimary"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/moreArtistNowPlaying"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/moreArtistNowPlaying"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="none"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="9"
+                            android:id="@+id/nowplayingcontrols">
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:id="@+id/albumArtNowPlaying"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerInside"
+                                app:placeholderImage="@drawable/music" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="0.5"
+                                android:background="#000"></View>
+
+
+                            <TextView
+                                android:id="@+id/songTiitleNowPlaying"
+                                android:layout_width="0dp"
+                                android:layout_height="33dp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginRight="32dp"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginTop="24dp"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true"
+                                android:text="Song Name"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="25dp"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/artistNameNowPlaying"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="56dp"
+                                android:layout_marginStart="56dp"
+                                android:layout_marginTop="8dp"
+                                android:maxLines="1"
+                                android:text="Artist Name"
+                                android:textColor="@color/textColorPrimary"
+                                android:textSize="20dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/songTiitleNowPlaying" />
+
+                            <ImageView
+                                android:id="@+id/prevNowplaying"
+                                android:layout_width="52dp"
+                                android:layout_height="0dp"
+
+                                app:layout_constraintHorizontal_bias="1.0"
+                                android:layout_margin="8dp"
+                                app:layout_constraintRight_toLeftOf="@id/playNowPlaying"
+                                app:layout_constraintTop_toTopOf="@id/playNowPlaying"
+                                app:layout_constraintBottom_toBottomOf="@id/playNowPlaying"
+                                app:layout_constraintVertical_bias="1.0"
+
+                                fresco:srcCompat="@drawable/prev" />
+
+                            <ImageView
+                                android:id="@+id/playNowPlaying"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/play"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintBottom_toTopOf="@id/seekBar"
+                                fresco:srcCompat="@drawable/play"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <ImageView
+                                android:id="@+id/nextNowPlaying"
+                                android:layout_width="54dp"
+                                android:layout_height="0dp"
+                                android:layout_margin="8dp"
+                                app:layout_constraintLeft_toRightOf="@id/playNowPlaying"
+                                app:layout_constraintTop_toTopOf="@id/playNowPlaying"
+                                app:layout_constraintBottom_toBottomOf="@id/playNowPlaying"
+
+                                app:layout_constraintHorizontal_bias="0.073"
+
+                                app:layout_constraintVertical_bias="0.0"
+                                fresco:srcCompat="@drawable/next" />
+
+
+                            <TextView
+                                android:id="@+id/currentDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:text="00:00"
+                                android:layout_marginTop="4dp"
+
+                                android:textColor="@color/textColorPrimary"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/playNowPlaying" />
+
+                            <TextView
+                                android:id="@+id/maxDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginTop="4dp"
+                                android:text="05:00"
+                                android:textColor="@color/textColorPrimary"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/playNowPlaying"
+                                />
+
+                            <SeekBar
+                                android:id="@+id/seekBar"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+
+                                android:layout_marginBottom="24dp"
+
+                                android:max="100"
+                                android:maxHeight="6dip"
+                                android:minHeight="6dip"
+                                android:paddingBottom="10px"
+                                android:paddingLeft="30px"
+                                android:paddingRight="30px"
+                                android:paddingTop="10px"
+                                android:progressDrawable="@drawable/seekbar_style"
+                                android:splitTrack="false"
+                                android:thumb="@drawable/custom_thumb"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintLeft_toRightOf="@id/currentDuration"
+                                app:layout_constraintRight_toLeftOf="@id/maxDuration"
+
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                        </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nowPlayingListConatiner"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:nestedScrollingEnabled="true"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/roundcorner">
+
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="25dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/recyclerback"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Up Next"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:clickable="false"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/nowPlayingList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary"> #263238</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#F57C00</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="grey200">#cecece</color>
+    <color name="greyDark">#696969</color>
+    <color name="dimBg">#bf000000</color>
+    <color name="firstslide">#3F51B5</color>
+    <color name="secondslide">#388E3C</color>
+    <color name="thirdslide">#BF360C</color>
+    <color name="forthslide">#009688</color>
+
+</resources>
